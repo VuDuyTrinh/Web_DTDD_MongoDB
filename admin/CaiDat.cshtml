@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "CaiDat";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h3>Đổi mật khẩu</h3>
+<a style="color:red">@ViewBag.ThongBao</a>
+@using (Html.BeginForm("CaiDat", "Admin", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <form>
+        <div class="group">
+            <hr class="soft" style="margin-bottom : 5px;" />
+            <div class="col-md-2"> </div>
+            <div class="col-md-2"><p>Họ Tên:</p></div>
+            <div class="col-md-4"><p>@Model.HoTen</p></div>
+        </div>
+        <br />
+        <div class="group">
+            <hr class="soft" style="margin-bottom : 5px;" />
+            <div class="col-md-2"> </div>
+            <div class="col-md-2"><p>Tên Tài khoản:</p></div>
+            <div class="col-md-4"><p>@Model.TenTK</p></div>
+        </div>
+        <br />
+        <div class="group">
+            <hr class="soft" style="margin-bottom : 5px;" />
+            <div class="col-md-2"> </div>
+            <div class="col-md-2"><p>Mật khẩu cũ:</p></div>
+            <div class="col-md-4"><input type="password" name="MKC" style="width:300px;" /></div>
+        </div>
+        <br />
+        <div class="group">
+            <hr class="soft" style="margin-bottom : 5px;" />
+            <div class="col-md-2"> </div>
+            <div class="col-md-2"><p>Mật khẩu:</p></div>
+            <div class="col-md-4"><input type="password" name="MK" style="width:300px;" /></div>
+        </div>
+        <br />
+        <div class="group">
+            <hr class="soft" style="margin-bottom : 5px;" />
+            <div class="col-md-2"> </div>
+            <div class="col-md-2"><p>Nhập lại mật khẩu:</p></div>
+            <div class="col-md-4"><input type="password" name="MK2" style="width:300px;" /></div>
+        </div>
+        <br />
+        <hr class="soft" style="margin-bottom : 5px;" />
+        <input class="btn btn-large btn-success" type="submit" value="Lưu" style="margin-top:10px; margin-left:450px; width: 150px; " />
+    </form>
+}
+
